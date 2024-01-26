@@ -1,7 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeIndex from '@/pages/HomeIndex.vue'
 import VibrationMonitorIndex from '@/pages/VibrationMonitor/VibrationMonitorIndex.vue'
-import SignalMonitorIndex from '@/pages/SignalMonitor/SignalMonitorIndex.vue'
+import MagnetismMonitorIndex from '@/pages/MagnetismMonitor/MagnetismMonitorIndex.vue'
+import VoiceMonitorIndex from '@/pages/VoiceMonitor/VoiceMonitorIndex.vue'
+import CurrentMonitorIndex from '@/pages/CurrentMonitor/CurrentMonitorIndex.vue'
+import ComprehensiveMonitorIndexVue from '@/pages/ComprehensiveMonitor/ComprehensiveMonitorIndex.vue';
+
 
 const routes = [
     {
@@ -10,16 +14,28 @@ const routes = [
         children: [
             {
                 path: '',
-                redirect: 'vibration'
+                redirect: 'comprehensive'
+            },
+            {
+                path: 'comprehensive',
+                component: ComprehensiveMonitorIndexVue
             },
             {
                 path: 'vibration',
                 component: VibrationMonitorIndex
             },
             {
-                path: 'signal',
-                component: SignalMonitorIndex
-            }
+                path: 'magnetism',
+                component: MagnetismMonitorIndex
+            },
+            {
+                path: 'voice',
+                component: VoiceMonitorIndex
+            },
+            {
+                path: 'current',
+                component: CurrentMonitorIndex
+            } 
         ]
     }
 ];

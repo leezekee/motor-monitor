@@ -2,23 +2,22 @@
     <el-container class="main-container">
         <el-main class="main-wrapper">
             <div class="charts">
-                <LineChart style="height: 50%;" ref="historyLineChartRef" />
-                <LineChart style="height: 50%;" ref="realLineChartRef" />
+                <LineChart style="height: 50%;" ref="historyLineChartRef"/>
+                <LineChart style="height: 50%;" ref="realLineChartRef"/>
             </div>
         </el-main>
         <el-aside width="300px" class="side-wrapper">
-            <vibration-operation></vibration-operation>
+            <magnetism-operation></magnetism-operation>
         </el-aside>
     </el-container>
 </template>
 
 <script setup>
 import api from '@/api'
-import { ref, watch, onMounted, nextTick } from 'vue'
+import { ref, onMounted, watch, nextTick } from 'vue'
 import getNowFormatDate from '@/utils/time'
 import useRouteUpdate from '@/hooks/useRouteUpdate'
-import LineChart from '@/components/Graphs/LineChart.vue'
-import VibrationOperation from './components/VibrationOperation.vue'
+import MagnetismOperation from './components/MagnetismOperation.vue'
 
 const onRouteUpdate = useRouteUpdate()
 const equipmentUuid = onRouteUpdate.equipmentUuid
@@ -35,13 +34,13 @@ const initCharts = (uuid) => {
     getEquipmentByUuid(uuid)
     nextTick(() => {
         historyLineChartRef.value.setTitle({
-            text: `${equipmentInfo.value.name} - 振动历史图谱`,
+            text: `${equipmentInfo.value.name} - 电磁历史图谱`,
             left: 'center',
             top: '5%',
             subtext: getNowFormatDate()
         })
         realLineChartRef.value.setTitle({
-            text: `${equipmentInfo.value.name} - 振动实时监测`,
+            text: `${equipmentInfo.value.name} - 电磁实时监测`,
             left: 'center',
             top: '5%',
             subtext: getNowFormatDate()

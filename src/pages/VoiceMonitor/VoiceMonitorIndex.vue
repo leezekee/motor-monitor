@@ -7,7 +7,7 @@
             </div>
         </el-main>
         <el-aside width="300px" class="side-wrapper">
-            <vibration-operation></vibration-operation>
+            <voice-operation></voice-operation>
         </el-aside>
     </el-container>
 </template>
@@ -18,7 +18,7 @@ import { ref, watch, onMounted, nextTick } from 'vue'
 import getNowFormatDate from '@/utils/time'
 import useRouteUpdate from '@/hooks/useRouteUpdate'
 import LineChart from '@/components/Graphs/LineChart.vue'
-import VibrationOperation from './components/VibrationOperation.vue'
+import VoiceOperation from './components/VoiceOperation.vue'
 
 const onRouteUpdate = useRouteUpdate()
 const equipmentUuid = onRouteUpdate.equipmentUuid
@@ -35,13 +35,13 @@ const initCharts = (uuid) => {
     getEquipmentByUuid(uuid)
     nextTick(() => {
         historyLineChartRef.value.setTitle({
-            text: `${equipmentInfo.value.name} - 振动历史图谱`,
+            text: `${equipmentInfo.value.name} - 声音历史图谱`,
             left: 'center',
             top: '5%',
             subtext: getNowFormatDate()
         })
         realLineChartRef.value.setTitle({
-            text: `${equipmentInfo.value.name} - 振动实时监测`,
+            text: `${equipmentInfo.value.name} - 声音实时监测`,
             left: 'center',
             top: '5%',
             subtext: getNowFormatDate()

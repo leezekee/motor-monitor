@@ -1,8 +1,11 @@
 <template>
     <el-menu :default-active="activeIndex" class="menu" mode="horizontal" @select="handleSelect">
         <div class="left">
-            <el-menu-item index="vibration">电机振动检测</el-menu-item>
-            <el-menu-item index="signal">电机信号检测</el-menu-item>
+            <el-menu-item index="comprehensive">综合监测</el-menu-item>
+            <el-menu-item index="vibration">电机振动监测</el-menu-item>
+            <el-menu-item index="magnetism">电机电磁监测</el-menu-item>
+            <el-menu-item index="voice">电机声音监测</el-menu-item>
+            <el-menu-item index="current">电机电流监测</el-menu-item>
         </div>
         <!-- <div class="right">
             <el-sub-menu index="color">
