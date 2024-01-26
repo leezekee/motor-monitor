@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo [Husky] pre-commit hook started...
+echo [Husky] eslint started...
+
+npm run lint:eslint
+npm run lint:stylelint
+
+if [ $? -eq 0 ]; then
+    echo [Husky] eslint passed
+    exit 0
+else
+    echo [Husky] eslint failed, commit denied!
+    exit 1
+fi
+```
