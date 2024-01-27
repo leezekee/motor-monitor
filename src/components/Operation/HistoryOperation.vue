@@ -35,12 +35,13 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import ComprehensiveMonitorIndex from "@/pages/ComprehensiveMonitor/ComprehensiveMonitorIndex.vue";
+import ComprehensiveMonitorIndex from "../../pages/ComprehensiveMonitor/ComprehensiveMonitorIndex.vue";
 
 const value1 = ref(null);
 const value2 = ref(null);
 
-let radio = ref(null)
+const radio = ref(null)
+const emit = defineEmits(["mode-event"])
 
 const isTimeVisible = ref(true);
 const toggleTimeVisibility = () => {
@@ -54,7 +55,7 @@ const showDateRange1 = () => {
     const startTime = startDate.getTime()
 
   const mode = ref("历史")
-
+  emit('mode-event',mode)
   console.log("历史模式")
   console.log("模式1")
   console.log("起始日期:", startTime)
@@ -88,8 +89,11 @@ const showDateRange2 = () => {
   console.log("起始日期:", startTime)
   console.log("终止日期:", endTime)
 
+
+
   const mode = ref("历史")
-  this.$emit('mode-event', mode)
+  emit('mode-event',mode)
+
   }
 
 </script>
@@ -97,7 +101,7 @@ const showDateRange2 = () => {
 <style lang="scss" scoped>
 
 .title {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 25px;
     font-weight: bold;
     color: var(--op-title-color);
@@ -111,7 +115,7 @@ const showDateRange2 = () => {
    color: var(--op-title-color);
  }
 .block {
-  margin: 15px;
+  margin: 20px;
 }
 
 
@@ -146,13 +150,5 @@ const showDateRange2 = () => {
   color: var(--op-title-color);
 }
 
-.popperClass .el-date-picker {
-  width: 50px;
-  height: 50px;
-  .el-picker-panel__content {
-    width: 50px;
-    height: 50px;
-    margin-left: 0;
-  }
-}
+
 </style>

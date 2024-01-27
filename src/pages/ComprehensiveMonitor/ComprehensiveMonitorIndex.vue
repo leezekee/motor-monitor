@@ -36,11 +36,10 @@ const voiceRef = ref(null)
 const currentRef = ref(null)
 const equipmentInfo = ref({})
 //我想把HistoryOperation和RealOperation里面传来的a值传到这里成为mode，然后根据mode值来判断是实时模式还是历史模式
-let mode = ref("实时")
-function handleModeEvent(newMode) {
-  mode = newMode; // 在函数内部修改全局变量 mode 的值
-  console.log("mode:", mode); // 打印修改后的 mode 值
-}
+const mode = ref("实时")
+const handleModeEvent = (mode1) => {
+  console.log(mode1)
+};
 
 watch(equipmentUuid, (newVal, oldVal) => {
     console.log('equipmentUuid', newVal, oldVal);
