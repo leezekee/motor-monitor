@@ -2,6 +2,9 @@
     <div class="sidebar-container">
         <div class="sidebar-wrapper">
             <span class="title">操作页</span>
+          <history-operation></history-operation>
+
+          <real-operation></real-operation>
         </div>
     </div>
 </template>
@@ -9,6 +12,8 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import api from '@/api'
+import RealOperation from "@/components/Operation/RealOperation.vue";
+import HistoryOperation from "@/components/Operation/HistoryOperation.vue";
 
 </script>
 

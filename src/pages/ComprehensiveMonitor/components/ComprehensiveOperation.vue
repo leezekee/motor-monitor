@@ -37,6 +37,7 @@ import api from '@/api'
         font-size: 20px;
         font-weight: bold;
         color: var(--op-title-color);
+        caret-color: transparent;
     }
 }
 </style>
