@@ -7,7 +7,7 @@
             </div>
         </el-main>
         <el-aside width="300px" class="side-wrapper">
-            <vibration-operation></vibration-operation>
+            <vibration-operation @mode-event2="handleModeEvent"></vibration-operation>
         </el-aside>
     </el-container>
 </template>
@@ -31,6 +31,11 @@ watch(equipmentUuid, (newVal, oldVal) => {
     initCharts(newVal)
 })
 
+let mode = ref("实时")
+const handleModeEvent = (mode1) => {
+  mode = mode1
+  console.log(mode.value)
+};
 const initCharts = (uuid) => {
     getEquipmentByUuid(uuid)
     nextTick(() => {

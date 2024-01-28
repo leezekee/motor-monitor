@@ -2,9 +2,9 @@
     <div class="sidebar-container">
         <div class="sidebar-wrapper">
             <span class="title">操作页</span>
-          <history-operation></history-operation>
+          <history-operation @mode-event1="handleModeEvent"></history-operation>
 
-          <real-operation></real-operation>
+          <real-operation @mode-event1="handleModeEvent"></real-operation>
         </div>
     </div>
 </template>
@@ -15,6 +15,10 @@ import api from '@/api'
 import RealOperation from "@/components/Operation/RealOperation.vue";
 import HistoryOperation from "@/components/Operation/HistoryOperation.vue";
 
+const emit = defineEmits(['mode-event2'])
+const handleModeEvent = (mode1) => {
+  emit('mode-event2', mode1)
+};
 </script>
 
 <style lang="scss" scoped>

@@ -7,7 +7,7 @@
             </div>
         </el-main>
         <el-aside width="300px" class="side-wrapper">
-            <voice-operation></voice-operation>
+            <voice-operation @mode-event2="handleModeEvent"></voice-operation>
         </el-aside>
     </el-container>
 </template>
@@ -30,6 +30,12 @@ watch(equipmentUuid, (newVal, oldVal) => {
     console.log('equipmentUuid', newVal, oldVal);
     initCharts(newVal)
 })
+
+let mode = ref("实时")
+const handleModeEvent = (mode1) => {
+  mode = mode1
+  console.log(mode.value)
+};
 
 const initCharts = (uuid) => {
     getEquipmentByUuid(uuid)
