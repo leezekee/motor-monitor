@@ -51,8 +51,8 @@ const showDateRange1 = () => {
     const startDate = value1.value
     const endDate = value2.value
 
-    const endTime = endDate.getTime()
-    const startTime = startDate.getTime()
+    const endTime = parseInt(String(endDate.getTime() / 1000))
+    const startTime = parseInt(String(startDate.getTime() / 1000))
 
   const mode = ref("历史")
   emit('mode-event',mode)
@@ -65,23 +65,18 @@ const showDateRange1 = () => {
 const showDateRange2 = () => {
 
   let startTime = null
-  let endTime = null
-
+  let endTime = parseInt(String(new Date().getTime() / 1000))
   if (radio.value == 1) {
-     endTime = new Date().getTime()
-     startTime = endTime - 24 * 60 * 60 * 1000
+     startTime = parseInt(String(endTime - 24 * 60 * 60))
   }
   else if (radio.value == 2) {
-    endTime = new Date().getTime()
-    startTime = endTime - 7 * 24 * 60 * 60 * 1000
+    startTime = parseInt(String(endTime - 7 * 24 * 60 * 60))
   }
   else if (radio.value == 3) {
-    endTime = new Date().getTime()
-    startTime = endTime - 30 * 24 * 60 * 60 * 1000
+    startTime = parseInt(String(endTime - 30 * 24 * 60 * 60))
   }
   else if (radio.value == 4) {
-    endTime = new Date().getTime()
-    startTime = endTime - 90 * 24 * 60 * 60 * 1000
+    startTime = parseInt(String(endTime - 90 * 24 * 60 * 60))
   }
 
   console.log("历史模式")
