@@ -3,7 +3,7 @@ import dark from '../../static/dark.json'
 import getNowFormatDate from '@/utils/time'
 
 export default function useGraph() {
-    const pulicOptions = {
+    let pulicOptions = {
         grid: {
             left: '5%',
             right: '5%',

@@ -5,6 +5,7 @@ import MagnetismMonitorIndex from '@/pages/MagnetismMonitor/MagnetismMonitorInde
 import VoiceMonitorIndex from '@/pages/VoiceMonitor/VoiceMonitorIndex.vue'
 import CurrentMonitorIndex from '@/pages/CurrentMonitor/CurrentMonitorIndex.vue'
 import ComprehensiveMonitorIndexVue from '@/pages/ComprehensiveMonitor/ComprehensiveMonitorIndex.vue';
+import AlertRecord from '@/pages/AlertRecord/AlertRecord.vue'
 
 
 const routes = [
@@ -35,7 +36,11 @@ const routes = [
             {
                 path: 'current',
                 component: CurrentMonitorIndex
-            } 
+            },
+            {
+                path: 'record',
+                component: AlertRecord
+            }
         ]
     }
 ];

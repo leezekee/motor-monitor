@@ -4,7 +4,7 @@
 
 <script setup>
 import useGraph from '@/hooks/useGraph'
-import { ref, onMounted, onUnmounted, nextTick, defineExpose } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 
 
 const lineChartRef = ref(null)

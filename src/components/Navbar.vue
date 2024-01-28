@@ -6,6 +6,7 @@
             <el-menu-item index="magnetism">电机电磁监测</el-menu-item>
             <el-menu-item index="voice">电机声音监测</el-menu-item>
             <el-menu-item index="current">电机电流监测</el-menu-item>
+            <el-menu-item index="record">报警记录</el-menu-item>
         </div>
         <!-- <div class="right">
             <el-sub-menu index="color">

@@ -39,6 +39,9 @@ watch(equipmentUuid, (newVal, oldVal) => {
 const initCharts = (uuid) => {
     getEquipmentByUuid(uuid)
     nextTick(() => {
+        if (!equipmentInfo.value) {
+            return
+        }
         vibrationRef.value.setTitle({
             text: `${equipmentInfo.value.name} - 振动${mode.value}图谱`,
             left: 'center',
