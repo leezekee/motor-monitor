@@ -9,10 +9,10 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-const emits = defineEmits(["mode-event"])
+const emits = defineEmits(["mode-event1"])
 const showDateRange = () => {
   const mode = ref("实时")
-  emits("mode-event", mode)
+  emits("mode-event1", mode)
   console.log("实时模式")
 }
 </script>

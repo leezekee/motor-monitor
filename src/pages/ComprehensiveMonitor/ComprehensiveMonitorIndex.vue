@@ -9,11 +9,9 @@
             </div>
         </el-main>
         <el-aside width="300px" class="side-wrapper">
-            <comprehensive-operation></comprehensive-operation>
+            <comprehensive-operation @mode-event2="handleModeEvent"></comprehensive-operation>
         </el-aside>
     </el-container>
-  <HistoryOperation @mode-event="handleModeEvent" />
-  <RealOperation @mode-event="handleModeEvent" />
 
 
 </template>
@@ -36,9 +34,10 @@ const voiceRef = ref(null)
 const currentRef = ref(null)
 const equipmentInfo = ref({})
 //我想把HistoryOperation和RealOperation里面传来的a值传到这里成为mode，然后根据mode值来判断是实时模式还是历史模式
-const mode = ref("实时")
+let mode = ref("实时")
 const handleModeEvent = (mode1) => {
-  console.log(mode1)
+    mode = mode1
+    console.log(mode.value)
 };
 
 watch(equipmentUuid, (newVal, oldVal) => {

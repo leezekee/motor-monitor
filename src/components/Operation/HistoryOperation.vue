@@ -41,7 +41,7 @@ const value1 = ref(null);
 const value2 = ref(null);
 
 const radio = ref(null)
-const emit = defineEmits(["mode-event"])
+const emit = defineEmits(["mode-event1"])
 
 const isTimeVisible = ref(true);
 const toggleTimeVisibility = () => {
@@ -55,7 +55,7 @@ const showDateRange1 = () => {
     const startTime = parseInt(String(startDate.getTime() / 1000))
 
   const mode = ref("历史")
-  emit('mode-event',mode)
+  emit('mode-event1',mode)
   console.log("历史模式")
   console.log("模式1")
   console.log("起始日期:", startTime)
@@ -87,7 +87,7 @@ const showDateRange2 = () => {
 
 
   const mode = ref("历史")
-  emit('mode-event',mode)
+  emit('mode-event1',mode)
 
   }
 
